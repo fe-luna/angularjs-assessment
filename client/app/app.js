@@ -1,14 +1,14 @@
 import angular from "angular";
 import uiRouter from "angular-ui-router";
-import Common from "./common/common";
-import Components from "./components/components";
+import Components from "./components";
+import Pages from "./pages";
 import AppComponent from "./app.component";
 import "./static/jquery.global.js";
 import "./static/semantic/semantic.min.css";
 import "./static/semantic/semantic.min.js";
 
 angular
-  .module("app", [uiRouter, Common, Components])
+  .module("app", [uiRouter, Components, Pages])
   .config(($locationProvider) => {
     "ngInject";
     // @see: https://github.com/angular-ui/ui-router/wiki/Frequently-Asked-Questions

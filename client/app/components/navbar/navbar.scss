@@ -1,0 +1,65 @@
+@import "../../styles/common";
+
+.navbar {
+  height: $navbarHeight;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #2e2d2c;
+
+  .logo {
+    width: 31px;
+    height: 38px;
+    background-size: contain;
+    background: url("../../static/images/logo.png") center center no-repeat;
+    transform: translateY(6px);
+  }
+
+  .site-name {
+    margin: 0 0 0 14px;
+    color: $primaryColor;
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .ui.secondary.inverted.pointing.menu {
+    flex: 1;
+    margin: 0 0 0 34px;
+    border: 0;
+
+    .item {
+      height: $navbarHeight;
+      padding: 0 2px;
+      margin: 0 14px;
+
+      &.active {
+        position: relative;
+        border-color: $primaryColor;
+      }
+    }
+  }
+
+  .alert,
+  .upgrade {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+
+  .upgrade {
+    margin-left: 20px;
+    span {
+      padding-left: 2px;
+      font-size: 12px;
+      color: #c5c5c4;
+    }
+  }
+
+  .avatar {
+    margin-left: 30px;
+  }
+}

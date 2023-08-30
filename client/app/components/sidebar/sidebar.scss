@@ -1,0 +1,28 @@
+@import "../../styles/common";
+
+.sidebar {
+  .ui.search {
+    display: flex;
+    align-items: center;
+    height: 40px;
+    background-color: #3c3f41;
+    padding-left: 10px;
+
+    i.icon {
+      height: 20px;
+    }
+
+    input {
+      flex: 1;
+      background: transparent;
+      font-size: 12px;
+      border: 0;
+      color: $textColor;
+    }
+  }
+
+  .ui.search > .prompt:focus {
+    background-color: transparent;
+    color: $textColor;
+  }
+}

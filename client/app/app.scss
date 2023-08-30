@@ -1,7 +1,74 @@
-@import "common/common";
+@import "styles/common";
 
-.app {
+body,
+html {
   height: 100%;
-  background-color: $lightBgColor;
+  width: 100%;
+  overflow: hidden;
+  background: $bgColor;
 }
 
+// ===== layout =====
+.ui.grid.layout {
+  height: 100%;
+  flex-direction: column;
+  background-color: $lightBgColor;
+
+  .row,
+  .row .column {
+    padding: 0;
+  }
+
+  .layout {
+    &-header {
+      border-bottom: 1px solid $dividerColor;
+    }
+
+    &-container {
+      flex: 1;
+    }
+
+    &-sidebar.column {
+      width: 240px;
+      border-right: 1px solid $dividerColor;
+    }
+
+    &-main {
+      flex: 1;
+      background-color: $bgColor;
+    }
+
+    &-aside.column {
+      width: 280px;
+      border-left: 1px solid $dividerColor;
+    }
+  }
+}
+
+// ===== icons =====
+.custom-icon {
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+$iconNames: "alert", "attachment", "chat", "domain", "emoji", "follower", "gif",
+  "group", "inbox", "indicator", "Instagram", "link", "medal", "news", "pie",
+  "strategist", "subtract", "trader", "twitter", "up-gray", "up-green", "valour";
+
+@each $iconName in $iconNames {
+  $iconPath: "./static/icons/#{$iconName}.png";
+  .custom-icon-#{$iconName} {
+    background: url(#{$iconPath}) center center no-repeat;
+    background-size: contain;
+  }
+}
+
+// ===== avatar =====
+@for $i from 1 through 3 {
+  $iconPath: "./static/images/avatar-#{$i}.png";
+  .avatar-#{$i} {
+    background: url(#{$iconPath}) center center no-repeat;
+    background-size: contain;
+  }
+}

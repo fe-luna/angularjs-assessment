@@ -1,4 +1,14 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="app">
-  <div ui-view></div>
+<div class="ui grid padded layout">
+  <div class="row layout-header">
+    <div class="column">
+      <navbar></navbar>
+    </div>
+  </div>
+  <div class="row layout-container">
+    <div class="column layout-sidebar">
+      <sidebar></sidebar>
+    </div>
+    <div class="column layout-main" ui-view></div>
+  </div>
 </div>
