@@ -3,7 +3,9 @@ import uiRouter from "angular-ui-router";
 import Common from "./common/common";
 import Components from "./components/components";
 import AppComponent from "./app.component";
-import "normalize.css";
+import "./static/jquery.global.js";
+import "./static/semantic/semantic.min.css";
+import "./static/semantic/semantic.min.js";
 
 angular
   .module("app", [uiRouter, Common, Components])
