@@ -1,12 +1,12 @@
 import angular from "angular";
+import Contact from "./contact/contact";
 import Navbar from "./navbar/navbar";
 import Sidebar from "./sidebar/sidebar";
-import User from "./user/user";
 
 const componentsModule = angular.module("app.components", [
+  Contact,
   Navbar,
   Sidebar,
-  User,
 ]).name;
 
 export default componentsModule;

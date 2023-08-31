@@ -5,6 +5,7 @@ export default function () {
     // current user
     user: {
       uid: 1,
+      name: "Luna",
     },
     userMap: {},
     chatMap: {},
@@ -15,12 +16,26 @@ export default function () {
     const mockCount = 10;
     const uids = new Array(mockCount).fill(0).map((i, idx) => idx + 1);
     uids.forEach((uid) => {
+      const name = Mock.Random.name();
+
+      state.chatMap[uid] = new Array(mockCount).fill(0).map(() => {
+        const isMe = Mock.Random.integer(0, 1) === 1;
+        return {
+          from: isMe ? state.user.uid : uid,
+          to: isMe ? uid : state.user.uid,
+          name: isMe ? state.user.name : name,
+          msg: Mock.Random.paragraph(2, 6),
+          time: Mock.Random.time("HH:mm a"),
+        };
+      });
+
       const allBadges = ["medal", "strategist", "trader", "valour"];
       const badges = allBadges.filter((_) => Mock.Random.integer(0, 1) === 1);
-
+      const chat = state.chatMap[uid] || [];
+      const lastMsg = chat[chat.length - 1] || {};
       state.userMap[uid] = {
         uid,
-        name: Mock.Random.name(),
+        name,
         followers: Mock.Random.integer(0, 10000),
         instagram: Mock.Random.string("abcdefghijklmnopqrstuvwxyz", 5, 10),
         twitter: Mock.Random.string("abcdefghijklmnopqrstuvwxyz", 5, 10),
@@ -28,25 +43,17 @@ export default function () {
         bio: Mock.Random.paragraph(),
         badges: badges.length ? badges : allBadges[Mock.Random.integer(0, 3)],
         score: Mock.Random.integer(-20, 20),
+        time: lastMsg.time,
+        msg: lastMsg.msg,
         // avatar
       };
-
-      // can't chat to self
-      if (uid === state.user.uid) {
-        return;
-      }
-
-      state.chatMap[uid] = new Array(mockCount).fill(0).map(() => {
-        const isMe = Mock.Random.integer(0, 1) === 1;
-        return {
-          from: isMe ? state.user.uid : uid,
-          to: isMe ? uid : state.user.uid,
-          name: state.userMap[uid].name,
-          msg: Mock.Random.paragraph(2, 6),
-          time: Mock.Random.time("HH:mm a"),
-        };
-      });
     });
+  };
+
+  this.getContacts = function () {
+    return Object.values(state.userMap).filter(
+      (item) => item.uid !== state.user.uid
+    );
   };
 
   this.getUserByUid = function (uid) {
