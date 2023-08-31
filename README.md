@@ -11,7 +11,7 @@ Build from [NG6-starter](https://github.com/PatrickJS/NG6-starter)
 
 ## Preview
 
-online: [aws]
+online: <https://main.d1sv9ws823rusa.amplifyapp.com>
 
 ## Futures
 
