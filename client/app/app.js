@@ -3,6 +3,7 @@ import uiRouter from "angular-ui-router";
 import Components from "./components";
 import Pages from "./pages";
 import AppComponent from "./app.component";
+import StateService from "./stores";
 import "./static/jquery.global.js";
 import "./static/semantic/semantic.min.css";
 import "./static/semantic/semantic.min.js";
@@ -16,4 +17,13 @@ angular
     $locationProvider.html5Mode(true).hashPrefix("!");
   })
 
-  .component("app", AppComponent);
+  .component("app", AppComponent)
+  .service("StateService", StateService)
+  .controller("AppController", [
+    "$scope",
+    "StateService",
+    function ($scope, StateService) {
+      StateService.init();
+      console.log(StateService.getUserByUid(1));
+    },
+  ]);
