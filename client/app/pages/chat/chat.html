@@ -1,3 +1,21 @@
 <div class="chat">
-  <div class="header">chat {{ $ctrl.uid }}</div>
+  <div class="header">
+    <div class="ui avatar image {{$ctrl.chatUser.avatar}}"></div>
+    <div class="name">{{ $ctrl.chatUser.name }}</div>
+  </div>
+  <div class="msg-list">
+    <div ng-repeat="msg in $ctrl.msgs">
+      <bubble
+        name="msg.name"
+        msg="msg.msg"
+        time="msg.time"
+        isMe="msg.isMe"
+        avatar="msg.avatar"
+      ></bubble>
+    </div>
+  </div>
+  <div class="editor">
+    <div class="input"></div>
+    <div class="tools"></div>
+  </div>
 </div>

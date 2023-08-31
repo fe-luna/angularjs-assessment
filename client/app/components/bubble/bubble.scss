@@ -1,0 +1,42 @@
+@import "../../styles/common";
+
+.bubble {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 20px;
+
+  .ui.avatar.image {
+    width: 55px;
+    height: 55px;
+  }
+
+  .wrapper {
+    max-width: 600px;
+    min-width: 300px;
+    margin-left: 20px;
+    padding: 20px;
+    color: $textColor;
+    border-radius: 20px 20px 20px 0px;
+    background-color: $bubbleBgColor;
+
+    &.me {
+      flex-direction: row-reverse;
+    }
+
+    .name {
+      font-size: 14px;
+      margin-right: 20px;
+    }
+
+    .time {
+      font-size: 12px;
+      color: $lightTextColor;
+    }
+
+    .msg {
+      margin-top: 5px;
+      font-size: 12px;
+      line-height: 1.4em;
+    }
+  }
+}

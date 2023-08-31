@@ -6,6 +6,7 @@ export default function () {
     user: {
       uid: 1,
       name: "Luna",
+      avatar: "avatar-1",
     },
     userMap: {},
     chatMap: {},
@@ -24,7 +25,7 @@ export default function () {
           from: isMe ? state.user.uid : uid,
           to: isMe ? uid : state.user.uid,
           name: isMe ? state.user.name : name,
-          msg: Mock.Random.paragraph(2, 6),
+          msg: Mock.Random.sentence(2, 20),
           time: Mock.Random.time("HH:mm a"),
         };
       });
@@ -63,6 +64,10 @@ export default function () {
       return {};
     }
     return state.userMap[uid];
+  };
+
+  this.getCurrentUser = function () {
+    return state.user;
   };
 
   this.getChatByUid = function (uid) {
