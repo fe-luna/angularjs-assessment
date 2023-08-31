@@ -9,7 +9,6 @@ let bubbleComponent = {
     time: "<",
     avatar: "<",
     isMe: "<",
-    from: "<",
   },
   template,
   controller,

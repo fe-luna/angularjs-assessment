@@ -16,7 +16,7 @@ online: <https://main.d1sv9ws823rusa.amplifyapp.com>
 ## Futures
 
 1. use Sass for styling
-2. use MockJS to mock the test data
+2. use MockJS[https://www.npmjs.com/package/mockjs] to mock the test data
 3. basic routing
 
 ## Screenshots

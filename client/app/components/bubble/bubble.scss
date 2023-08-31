@@ -5,6 +5,14 @@
   align-items: flex-start;
   margin-bottom: 20px;
 
+  &.me {
+    flex-direction: row-reverse;
+
+    .wrapper {
+      margin-right: 20px;
+    }
+  }
+
   .ui.avatar.image {
     width: 55px;
     height: 55px;
@@ -18,10 +26,6 @@
     color: $textColor;
     border-radius: 20px 20px 20px 0px;
     background-color: $bubbleBgColor;
-
-    &.me {
-      flex-direction: row-reverse;
-    }
 
     .name {
       font-size: 14px;
