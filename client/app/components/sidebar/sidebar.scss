@@ -1,6 +1,10 @@
 @import "../../styles/common";
 
 .sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
   .ui.search {
     display: flex;
     align-items: center;
@@ -24,5 +28,10 @@
   .ui.search > .prompt:focus {
     background-color: transparent;
     color: $textColor;
+  }
+
+  .contacts {
+    flex: 1;
+    overflow-y: auto;
   }
 }

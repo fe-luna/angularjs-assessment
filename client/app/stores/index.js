@@ -16,7 +16,7 @@ export default function () {
     const mockCount = 10;
     const uids = new Array(mockCount).fill(0).map((i, idx) => idx + 1);
     uids.forEach((uid) => {
-      const name = Mock.Random.name();
+      const name = Mock.Random.first();
 
       state.chatMap[uid] = new Array(mockCount).fill(0).map(() => {
         const isMe = Mock.Random.integer(0, 1) === 1;
@@ -45,7 +45,8 @@ export default function () {
         score: Mock.Random.integer(-20, 20),
         time: lastMsg.time,
         msg: lastMsg.msg,
-        // avatar
+        // should use url, but use class currently
+        avatar: `avatar-${Mock.Random.integer(1, 3)}`,
       };
     });
   };

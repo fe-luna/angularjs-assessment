@@ -1,4 +1,20 @@
 <div class="contact">
-  <div>{{ $ctrl.name }}</div>
-  <div>{{ $ctrl.time }}</div>
+  <div class="score">
+    <i class="custom-icon custom-icon-up-green"></i>
+    <div class="value">{{ $ctrl.score }}</div>
+  </div>
+  <div class="ui avatar image {{$ctrl.avatar}}"></div>
+  <div class="wrapper">
+    <div class="info">
+      <span class="name">{{ $ctrl.name }}</span>
+      <span class="time">{{ $ctrl.time }}</span>
+    </div>
+    <div class="more">
+      <span class="total">+90</span>
+      <span class="badge" ng-repeat="badge in $ctrl.badges">
+        <i class="custom-icon custom-icon-{{ badge }}"></i>
+      </span>
+    </div>
+    <div class="msg">{{ $ctrl.msg }}</div>
+  </div>
 </div>

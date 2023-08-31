@@ -9,39 +9,30 @@ html {
 }
 
 // ===== layout =====
-.ui.grid.layout {
-  height: 100%;
+.layout {
+  display: flex;
   flex-direction: column;
+  height: 100%;
   background-color: $lightBgColor;
 
-  .row,
-  .row .column {
-    padding: 0;
+  &-header {
+    border-bottom: 1px solid $dividerColor;
   }
 
-  .layout {
-    &-header {
-      border-bottom: 1px solid $dividerColor;
-    }
+  &-container {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
 
-    &-container {
-      flex: 1;
-    }
+  &-sidebar {
+    width: 240px;
+    border-right: 1px solid $dividerColor;
+  }
 
-    &-sidebar.column {
-      width: 240px;
-      border-right: 1px solid $dividerColor;
-    }
-
-    &-main {
-      flex: 1;
-      background-color: $bgColor;
-    }
-
-    &-aside.column {
-      width: 280px;
-      border-left: 1px solid $dividerColor;
-    }
+  &-main {
+    flex: 1;
+    background-color: $bgColor;
   }
 }
 

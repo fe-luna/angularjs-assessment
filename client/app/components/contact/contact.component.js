@@ -9,6 +9,7 @@ let contactComponent = {
     score: "<",
     msg: "<",
     time: "<",
+    avatar: "<",
   },
   template,
   controller,

@@ -4,13 +4,16 @@
     <input class="prompt" type="text" placeholder="Search here" />
   </div>
 
-  <div ng-repeat="contact in $ctrl.contacts">
-    <contact
-      name="contact.name"
-      badge="contact.badge"
-      score="contact.score"
-      msg="contact.msg"
-      time="contact.time"
-    ></contact>
+  <div class="contacts">
+    <div ng-repeat="contact in $ctrl.contacts">
+      <contact
+        name="contact.name"
+        avatar="contact.avatar"
+        badges="contact.badges"
+        score="contact.score"
+        msg="contact.msg"
+        time="contact.time"
+      ></contact>
+    </div>
   </div>
 </div>

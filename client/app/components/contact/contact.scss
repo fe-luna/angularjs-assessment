@@ -1,4 +1,73 @@
 @import "../../styles/common";
 
 .contact {
+  display: flex;
+  align-items: center;
+  color: $textColor;
+  font-size: 12px;
+  line-height: 1.2em;
+  padding: 6px 20px 6px 10px;
+  // TODO 0.5px hairline
+  border: 1px solid $dividerColor;
+
+  .score {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20px;
+
+    .custom-icon {
+      width: 10px;
+      height: 10px;
+    }
+
+    .value {
+      margin-top: 1px;
+      font-size: 10px;
+    }
+  }
+
+  .avatar {
+    width: 40px !important;
+    height: 40px !important;
+    flex-shrink: 0;
+  }
+
+  .wrapper {
+    flex: 1;
+    margin-left: 8px;
+    overflow: hidden;
+  }
+
+  .info {
+    .name {
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .time {
+      color: $lightTextColor;
+    }
+  }
+
+  .more {
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+
+    .total {
+      margin-right: 10px;
+    }
+
+    .custom-icon {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .msg {
+    margin-top: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }

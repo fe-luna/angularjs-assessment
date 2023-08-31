@@ -1,14 +1,12 @@
 <!-- Place all UI elements intended to be present across all routes in this file -->
-<div class="ui grid padded layout" ng-controller="AppController">
-  <div class="row layout-header">
-    <div class="column">
-      <navbar></navbar>
-    </div>
+<div class="layout" ng-controller="AppController">
+  <div class="layout-header">
+    <navbar></navbar>
   </div>
-  <div class="row layout-container">
-    <div class="column layout-sidebar">
+  <div class="layout-container">
+    <div class="layout-sidebar">
       <sidebar></sidebar>
     </div>
-    <div class="column layout-main" ui-view></div>
+    <div class="layout-main" ui-view></div>
   </div>
 </div>
