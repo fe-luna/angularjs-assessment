@@ -15,10 +15,13 @@ online: <https://main.d1sv9ws823rusa.amplifyapp.com>
 
 ## Futures
 
--   ## features:
-
 1. use Sass for styling
-2. use mockjs to mock the test data
+2. use MockJS to mock the test data
+3. basic routing
+
+## Screenshots
+
+![chat page](./screenshots/chat.png)
 
 ## Runing locally
 
