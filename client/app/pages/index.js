@@ -1,7 +1,7 @@
 import angular from "angular";
 import Home from "./home/home";
-import About from "./about/about";
+import Chat from "./chat/chat";
 
-let pagesModule = angular.module("app.pages", [Home, About]).name;
+let pagesModule = angular.module("app.pages", [Home, Chat]).name;
 
 export default pagesModule;
