@@ -5,7 +5,10 @@
   </div>
 
   <div class="contacts">
-    <div ng-repeat="contact in $ctrl.contacts">
+    <div
+      ng-repeat="contact in $ctrl.contacts"
+      ng-click="$ctrl.toChat(contact.uid)"
+    >
       <contact
         name="contact.name"
         avatar="contact.avatar"
